@@ -54,7 +54,7 @@ export default function Hero() {
                         />
                     </svg> */}
                     <img 
-                        src="public/matthew-chin.png"
+                        src="/matthew-chin.png"
                         alt="formal-picture"
                         className="h-130 w-95 object-contain"
                     />
