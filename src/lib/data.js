@@ -36,7 +36,7 @@ export const projects = [
         tools: ['Figma'],
         liveDemo: "https://www.figma.com/design/gt1Y9k0lIrrYHdi51OVI5f/Untitled?t=7piqvhFRTAUG21Ae-1"
     }
-];
+
 
 
     {
@@ -50,7 +50,7 @@ export const projects = [
         liveDemo: "https://birthday-template-shop.vercel.app/"
     }
 
-
+];
 export const sectionIds = ['about', 'home', 'skills', 'projects', 'contact'];
 
 export const navLinks = [
