@@ -41,7 +41,7 @@ export const projects = [
 
     {
         projectName: "Birthday Template Shop",
-        thumbnail: "/birthday-template-preview.svg",
+        thumbnail: "/birthday-template-preview.jpg",
         overview: `
             A birthday website shop where visitors can explore themed birthday pages, personalize a greeting with a name and message, choose a package, and review order and GCash instructions. Built to make birthday surprises feel personal and memorable.
         `,
