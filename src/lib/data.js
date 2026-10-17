@@ -38,6 +38,19 @@ export const projects = [
     }
 ];
 
+
+    {
+        projectName: "Birthday Template Shop",
+        thumbnail: "/birthday-template-preview.svg",
+        overview: `
+            A birthday website shop where visitors can explore themed birthday pages, personalize a greeting with a name and message, choose a package, and review order and GCash instructions. Built to make birthday surprises feel personal and memorable.
+        `,
+        tools: ['HTML', 'CSS', 'JavaScript'],
+        githubLink: "https://github.com/matthew17n/birthday-template-shop",
+        liveDemo: "https://birthday-template-shop.vercel.app/"
+    }
+
+
 export const sectionIds = ['about', 'home', 'skills', 'projects', 'contact'];
 
 export const navLinks = [
