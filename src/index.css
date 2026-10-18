@@ -1,6 +1,5 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
 @import 'tailwindcss';
 
 html {
@@ -85,11 +84,11 @@ body {
 }
 
 @keyframes scroll {
-    0% {
+    from {
         transform: translateX(0);
     }
 
-    100% {
+    to {
         transform: translateX(-50%);
     }
 }
@@ -125,19 +124,47 @@ body {
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .slow-scroll {
-        animation: none;
-        will-change: auto;
+.hero-content {
+    animation: fadeSlideUp 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 28px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
     }
 }
 
+.scroll-progress-track {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10001;
+    width: 100%;
+    height: 3px;
+    pointer-events: none;
+    background: transparent;
+}
+
+.scroll-progress-bar {
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    transform-origin: left center;
+    background: linear-gradient(90deg, #0891b2, #22d3ee, #67e8f9);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+}
 
 .custom-cursor {
     position: fixed;
     top: -100px;
     left: -100px;
-    z-index: 99999;
+    z-index: 10000;
     width: 24px;
     height: 24px;
     border: 2px solid #06b6d4;
@@ -172,5 +199,15 @@ body {
 @media (pointer: coarse) {
     .custom-cursor {
         display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .slow-scroll {
+        animation: none;
     }
 }
