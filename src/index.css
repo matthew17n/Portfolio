@@ -1,531 +1,97 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 @import 'tailwindcss';
 
-:root {
-    color-scheme: dark;
-    --portfolio-bg: #20242d;
-    --portfolio-surface: #181b24;
-    --portfolio-cyan: #06b6d4;
-    --portfolio-cyan-bright: #22d3ee;
-    --portfolio-text: #f9fafb;
-    --portfolio-muted: #9ca3af;
-    --motion-smooth: cubic-bezier(0.16, 1, 0.3, 1);
-    --motion-standard: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 html {
-    width: 100%;
-    max-width: 100%;
-    scroll-behavior: smooth;
-    scroll-padding-top: 100px;
-    -webkit-text-size-adjust: 100%;
-}
-
-body {
-    width: 100%;
-    min-width: 0;
-    margin: 0;
-    overflow-x: clip;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    background-color: var(--portfolio-bg);
-    color: var(--portfolio-text);
-}
-
-#root {
-    width: 100%;
-    min-width: 0;
-    overflow-x: clip;
-    isolation: isolate;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-img,
-video,
-canvas,
-svg {
-    max-width: 100%;
-}
-
-img {
-    height: auto;
+  scroll-behavior: smooth;
 }
 
 section {
-    width: 100%;
-    min-width: 0;
-    scroll-margin-top: 100px;
+  scroll-margin-top: 3rem;
 }
 
-button,
-a,
-input,
-textarea {
-    -webkit-tap-highlight-color: transparent;
-}
-
-a {
-    text-decoration-thickness: from-font;
-    text-underline-offset: 4px;
-}
-
-button,
-a {
-    touch-action: manipulation;
-}
-
-::selection {
-    color: #ffffff;
-    background: rgba(6, 182, 212, 0.35);
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  background-color: rgba(32, 36, 45);
 }
 
 .bg-primary {
-    background-color: var(--portfolio-bg);
+  background-color: rgba(32, 36, 45);
 }
 
 .inter-thin {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 100;
-    font-style: normal;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
 }
 
 .inter-extralight {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
 }
 
 .inter-light {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
 }
 
 .inter-normal {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .inter-medium {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .inter-semibold {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 
 .inter-bold {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .inter-extrabold {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
 }
 
 .inter-black {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
 }
 
-@keyframes fadeSlideUp {
-    from {
-        opacity: 0;
-        transform: translate3d(0, 28px, 0);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-@keyframes cinematic-reveal {
-    from {
-        opacity: 0;
-        transform: translate3d(0, 24px, 0);
-        filter: blur(4px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-        filter: blur(0);
-    }
-}
-
-@keyframes cyan-pulse {
-    0%,
-    100% {
-        box-shadow: 0 0 12px rgba(6, 182, 212, 0.12);
-    }
-
-    50% {
-        box-shadow: 0 0 24px rgba(6, 182, 212, 0.28);
-    }
+.slow-scroll {
+  animation: scroll 40s linear infinite;
 }
 
 @keyframes scroll {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
-
-.slow-scroll {
-    animation: scroll 40s linear infinite;
-    will-change: transform;
-}
-
-.hero-content {
-    animation: fadeSlideUp 900ms var(--motion-smooth) both;
-}
-
-.hero-greeting {
-    animation: fadeSlideUp 800ms var(--motion-smooth) 100ms both;
-}
-
-.hero-name {
-    animation: fadeSlideUp 900ms var(--motion-smooth) 200ms both;
-}
-
-.hero-role {
-    animation: fadeSlideUp 900ms var(--motion-smooth) 300ms both;
-}
-
-.photo-frame {
-    display: inline-flex;
-    max-width: 100%;
-    padding: 5px;
-    overflow: hidden;
-    border: 2px solid var(--portfolio-cyan);
-    border-radius: 50%;
-    box-shadow:
-        0 0 15px rgba(6, 182, 212, 0.2),
-        inset 0 0 12px rgba(6, 182, 212, 0.08);
-    transition:
-        box-shadow 450ms var(--motion-smooth),
-        border-color 450ms var(--motion-smooth);
-}
-
-.photo-frame .hero-photo {
-    display: block;
-    width: clamp(220px, 28vw, 340px);
-    height: clamp(220px, 28vw, 340px);
-    max-width: 100%;
-    aspect-ratio: 1;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .photo-frame:hover {
-        border-color: var(--portfolio-cyan-bright);
-        box-shadow:
-            0 0 22px rgba(6, 182, 212, 0.35),
-            0 0 48px rgba(6, 182, 212, 0.12);
-    }
-}
-
-.animate-cinematic {
-    animation: cinematic-reveal 750ms var(--motion-smooth) both;
-}
-
-.animation-delay-100 {
-    animation-delay: 100ms;
-}
-
-.animation-delay-200 {
-    animation-delay: 200ms;
-}
-
-.animation-delay-300 {
-    animation-delay: 300ms;
-}
-
-.animation-delay-400 {
-    animation-delay: 400ms;
-}
-
-.project-card {
-    transition:
-        transform 400ms var(--motion-smooth),
-        border-color 350ms ease,
-        box-shadow 400ms var(--motion-smooth);
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .project-card:hover {
-        transform: translate3d(0, -5px, 0);
-        border-color: rgba(34, 211, 238, 0.45);
-        box-shadow: 0 12px 35px rgba(6, 182, 212, 0.12);
-    }
-}
-
-.animated-button {
-    transition:
-        transform 250ms var(--motion-smooth),
-        box-shadow 300ms ease,
-        background-color 250ms ease;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .animated-button:hover {
-        transform: translate3d(0, -2px, 0);
-        box-shadow: 0 8px 24px rgba(6, 182, 212, 0.2);
-    }
-}
-
-.animated-button:active {
-    transform: scale(0.98);
-}
-
-.scroll-progress-track {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10001;
-    width: 100%;
-    height: 3px;
-    pointer-events: none;
-    background: transparent;
-}
-
-.scroll-progress-bar {
-    width: 100%;
-    height: 100%;
-    transform: scaleX(0);
-    transform-origin: left center;
-    background: linear-gradient(
-        90deg,
-        #0891b2,
-        #22d3ee,
-        #67e8f9
-    );
-    box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
-}
-
-.custom-cursor {
-    position: fixed;
-    top: -100px;
-    left: -100px;
-    z-index: 9999;
-    width: 24px;
-    height: 24px;
-    border: 2px solid var(--portfolio-cyan);
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 12px rgba(6, 182, 212, 0.4);
-    transition:
-        width 200ms ease,
-        height 200ms ease,
-        background-color 200ms ease;
-}
-
-.custom-cursor::after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: var(--portfolio-cyan);
-    content: "";
-    transform: translate(-50%, -50%);
-}
-
-.custom-cursor.cursor-click {
-    width: 16px;
-    height: 16px;
-    background: rgba(6, 182, 212, 0.25);
-}
-
-@media (max-width: 768px) {
-    html {
-        scroll-padding-top: 120px;
-    }
-
-    section {
-        scroll-margin-top: 120px;
-    }
-}
-
-@media (max-width: 480px) {
-    .photo-frame .hero-photo {
-        width: min(280px, 72vw);
-        height: min(280px, 72vw);
-    }
-}
-
-@media (pointer: coarse) {
-    .custom-cursor {
-        display: none;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-
-    .hero-content,
-    .hero-greeting,
-    .hero-name,
-    .hero-role,
-    .animate-cinematic,
-    .slow-scroll {
-        animation: none !important;
-    }
-
-    .project-card,
-    .animated-button {
-        transform: none;
-    }
-}
-
-
-/* Fix oversized and overflowing portfolio elements */
-html,
-body,
-#root {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-}
-
-body {
-    margin: 0;
-    overflow-x: hidden;
-}
-
-#root {
-    overflow-x: clip;
-}
-
-main,
-section {
-    width: 100%;
-    min-width: 0;
-    max-width: 100%;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Prevent technology logos from stretching */
-.tech-stack img,
-.techStack img,
-.tech-stack-icons img,
-.techStackIcons img {
-    display: block;
-    width: 48px;
-    height: 48px;
-    max-width: 48px;
-    max-height: 48px;
-    object-fit: contain;
-    flex-shrink: 0;
-}
-
-/* Keep profile images proportional */
-.photo-frame {
-    width: fit-content;
-    max-width: 100%;
-}
-
-.photo-frame .hero-photo {
-    width: clamp(180px, 24vw, 300px);
-    height: clamp(180px, 24vw, 300px);
-    max-width: 100%;
-    aspect-ratio: 1;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-@media (max-width: 768px) {
-    .photo-frame .hero-photo {
-        width: min(240px, 68vw);
-        height: min(240px, 68vw);
-    }
-
-    .tech-stack img,
-    .techStack img,
-    .tech-stack-icons img,
-    .techStackIcons img {
-        width: 36px;
-        height: 36px;
-        max-width: 36px;
-        max-height: 36px;
-    }
-}
-
-
-/* Keep moving technology logos in one horizontal line */
-.slow-scroll {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    width: max-content;
-    gap: 2rem;
-    animation: scroll 40s linear infinite;
-    will-change: transform;
-}
-
-.slow-scroll img {
-    display: block;
-    width: 48px;
-    height: 48px;
-    max-width: none;
-    flex: 0 0 48px;
-    object-fit: contain;
-}
-
-/* Smaller logos on mobile */
-@media (max-width: 768px) {
-    .slow-scroll {
-        gap: 1.25rem;
-    }
-
-    .slow-scroll img {
-        width: 36px;
-        height: 36px;
-        flex-basis: 36px;
-    }
-}
-
