@@ -35,7 +35,7 @@ export default function App() {
             {isLoading && <PageLoader onComplete={finishLoading} />}
             <CursorEffect />
             <Navbar activeId={activeId} />
-            <main className="mx-20 flex flex-col gap-10">
+            <main className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-4 sm:px-6 lg:px-8">
                 <Homepage />
                 <Aboutpage />
                 <Skillspage />
