@@ -411,3 +411,45 @@ a {
         transform: none;
     }
 }
+
+
+/* Keep technology logos at a normal size */
+.tech-stack img,
+.techStack img,
+.tech-stack-icons img,
+.techStackIcons img {
+    width: 48px;
+    height: 48px;
+    max-width: 48px;
+    max-height: 48px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* Keep technology logo containers from stretching */
+.tech-stack,
+.techStack,
+.tech-stack-icons,
+.techStackIcons {
+    min-width: 0;
+}
+
+.tech-stack img,
+.techStack img,
+.tech-stack-icons img,
+.techStackIcons img {
+    display: block;
+}
+
+/* Responsive logo sizing */
+@media (max-width: 480px) {
+    .tech-stack img,
+    .techStack img,
+    .tech-stack-icons img,
+    .techStackIcons img {
+        width: 36px;
+        height: 36px;
+        max-width: 36px;
+        max-height: 36px;
+    }
+}
