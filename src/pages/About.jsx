@@ -34,7 +34,10 @@ export default function Aboutpage() {
             </h1>
 
             <p className="mt-6 w-full max-w-3xl text-center text-base leading-7 text-white inter-normal sm:mt-8 sm:text-lg sm:leading-8 lg:mt-10">
-                Hi! It&apos;s Ed Thomas Matthew Chin, and I&apos;m an IT student currently learning and growing in programming and technology. I enjoy building projects that help me improve my coding skills, creativity, and problem-solving abilities.
+             Hi! I'm Ed Thomas Matthew Chin, an IT student at Western Institute of Technology with a growing interest in web development and software technology. 
+            I enjoy exploring new technologies, building projects, and turning ideas into practical digital solutions. 
+            I'm continuously improving my programming skills through hands-on experience and personal projects, including VOTARA, my portfolio website, and an XSS Training Lab. As an aspiring developer, 
+                I'm eager to learn from experienced professionals, collaborate with others, and keep growing both technically and creatively.
             </p>
 
             <div className="mt-8 mb-10 grid w-full max-w-6xl grid-cols-1 items-stretch gap-5 sm:mt-10 sm:mb-14 sm:grid-cols-2 sm:gap-6 lg:mt-12 lg:mb-16 lg:grid-cols-3">
