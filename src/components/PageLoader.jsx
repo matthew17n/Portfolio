@@ -39,18 +39,26 @@ export default function PageLoader({ onComplete }) {
     return (
         <div className="page-loader">
             <div className="loader-glow" />
+
             <div className="loader-content">
-                <div className="loader-symbol">{"< />"}</div>
-                <h1 className="loader-title">MY PORTFOLIO</h1>
+                <div className="loader-symbol">
+                    <span className="loader-c">C</span>
+                    <span className="loader-h">H</span>
+                </div>
+
+                <h1>CHIN PORTFOLIO</h1>
+
                 <p className="loader-subtitle">
                     CRAFTING DIGITAL EXPERIENCES
                 </p>
+
                 <div className="loader-track">
                     <div
                         className="loader-progress"
                         style={{ width: `${progress}%` }}
                     />
                 </div>
+
                 <div className="loader-status">
                     <span>INITIALIZING EXPERIENCE</span>
                     <span>{progress}%</span>
