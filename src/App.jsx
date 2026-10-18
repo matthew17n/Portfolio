@@ -1,17 +1,18 @@
 
-import './index.css';
-import { Navbar } from './components/Navbar';
-import { sectionIds } from './lib/data.js';
-import { useScrollSpy } from './hooks/use-scroll-spy.js';
-import CursorEffect from './components/CursorEffect';
-import { useCallback, useEffect, useState } from 'react';
-import PageLoader from './components/PageLoader';
-import Homepage from './pages/Home.jsx';
-import Aboutpage from './pages/About.jsx';
-import Skillspage from './pages/Skills.jsx';
-import Portfoliopage from './pages/Portfolio.jsx';
-import Contactpage from './pages/Contact.jsx';
-import Footer from './components/Footer.jsx';
+import "./index.css";
+import { Navbar } from "./components/Navbar";
+import { sectionIds } from "./lib/data.js";
+import { useScrollSpy } from "./hooks/use-scroll-spy.js";
+import CursorEffect from "./components/CursorEffect";
+import ScrollProgress from "./components/ScrollProgress";
+import { useCallback, useEffect, useState } from "react";
+import PageLoader from "./components/PageLoader";
+import Homepage from "./pages/Home.jsx";
+import Aboutpage from "./pages/About.jsx";
+import Skillspage from "./pages/Skills.jsx";
+import Portfoliopage from "./pages/Portfolio.jsx";
+import Contactpage from "./pages/Contact.jsx";
+import Footer from "./components/Footer.jsx";
 
 export default function App() {
     const [isLoading, setIsLoading] = useState(true);
@@ -21,10 +22,10 @@ export default function App() {
     }, []);
 
     useEffect(() => {
-        document.body.style.overflow = isLoading ? 'hidden' : '';
+        document.body.style.overflow = isLoading ? "hidden" : "";
 
         return () => {
-            document.body.style.overflow = '';
+            document.body.style.overflow = "";
         };
     }, [isLoading]);
 
@@ -32,8 +33,14 @@ export default function App() {
 
     return (
         <>
-            {isLoading && <PageLoader onComplete={finishLoading} />}
+            <ScrollProgress />
+
+            {isLoading && (
+                <PageLoader onComplete={finishLoading} />
+            )}
+
             <CursorEffect />
+
             <div className="min-h-screen w-full min-w-0 overflow-x-clip">
                 <Navbar activeId={activeId} />
 
