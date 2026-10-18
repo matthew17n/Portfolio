@@ -18,7 +18,7 @@ export default function Hero() {
     ];
 
     return (
-        <div className="flex flex-row gap-2 items-center mt-9 w-full">
+      <div className="hero-content flex flex-row gap-2 items-center mt-9 w-full">
             <div className="w-[50%]">
                 {/* this part is for the text, links, and cta button */}
                 <div className="flex flex-col gap-3">
