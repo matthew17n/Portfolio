@@ -9,6 +9,7 @@ import { useCallback, useEffect, useState } from "react";
 import PageLoader from "./components/PageLoader";
 import Homepage from "./pages/Home.jsx";
 import Aboutpage from "./pages/About.jsx";
+import Journey from "./pages/Journey.jsx";
 import Skillspage from "./pages/Skills.jsx";
 import Portfoliopage from "./pages/Portfolio.jsx";
 import Contactpage from "./pages/Contact.jsx";
@@ -47,6 +48,7 @@ export default function App() {
                 <main className="mx-auto flex w-full max-w-7xl min-w-0 flex-col gap-10 px-4 sm:px-6 lg:px-8">
                     <Homepage />
                     <Aboutpage />
+                    <Journey />
                     <Skillspage />
                     <Portfoliopage />
                     <Contactpage />
