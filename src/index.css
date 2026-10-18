@@ -332,3 +332,154 @@ body {
     transform: none;
   }
 }
+
+
+.contact-section {
+  isolation: isolate;
+}
+
+.contact-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.contact-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-reveal-delay {
+  transition-delay: 180ms;
+}
+
+.contact-gradient-text {
+  background-size: 200% auto;
+  animation: contactTextShine 6s ease-in-out infinite;
+}
+
+@keyframes contactTextShine {
+  0%, 100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+
+.contact-orb {
+  animation: contactOrbFloat 9s ease-in-out infinite alternate;
+}
+
+.contact-orb-two {
+  animation-delay: -4s;
+}
+
+@keyframes contactOrbFloat {
+  from {
+    transform: translate3d(0, -12px, 0) scale(1);
+  }
+  to {
+    transform: translate3d(18px, 18px, 0) scale(1.12);
+  }
+}
+
+.contact-border-glow {
+  border-radius: 1.5rem;
+  background: linear-gradient(
+    120deg,
+    rgba(34, 211, 238, 0.3),
+    transparent 35%,
+    rgba(139, 92, 246, 0.25) 70%,
+    transparent
+  );
+  opacity: 0.35;
+  filter: blur(12px);
+  transition: opacity 0.4s ease;
+}
+
+.contact-panel {
+  transition:
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    transform 0.4s ease;
+}
+
+.contact-panel:hover {
+  border-color: rgba(34, 211, 238, 0.25);
+  box-shadow: 0 0 35px rgba(34, 211, 238, 0.06);
+}
+
+.contact-section:has(.contact-panel:hover) .contact-border-glow {
+  opacity: 0.8;
+}
+
+.contact-section input,
+.contact-section textarea {
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.08);
+}
+
+.contact-section button[type="submit"] {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.contact-section button[type="submit"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.22) 50%,
+    transparent 80%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+}
+
+.contact-section button[type="submit"]:hover::before {
+  transform: translateX(120%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .contact-panel:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-reveal,
+  .contact-reveal-delay,
+  .contact-gradient-text,
+  .contact-orb,
+  .contact-panel,
+  .contact-section input,
+  .contact-section textarea {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .contact-reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .contact-panel:hover {
+    transform: none;
+  }
+}
