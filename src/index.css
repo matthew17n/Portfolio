@@ -150,3 +150,43 @@ body {
   object-fit: cover;
   border-radius: 50%;
 }
+
+
+.custom-cursor {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #06b6d4;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.4);
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+}
+
+.custom-cursor::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: #06b6d4;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.custom-cursor.cursor-click {
+  width: 16px;
+  height: 16px;
+  background: rgba(6, 182, 212, 0.25);
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .custom-cursor {
+    display: none;
+  }
+}
