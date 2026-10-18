@@ -14,14 +14,9 @@
     --motion-standard: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-* {
-    box-sizing: border-box;
-}
-
 html {
     width: 100%;
     max-width: 100%;
-    margin: 0;
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
     -webkit-text-size-adjust: 100%;
@@ -31,7 +26,7 @@ body {
     width: 100%;
     min-width: 0;
     margin: 0;
-    overflow-x: hidden;
+    overflow-x: clip;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     background-color: var(--portfolio-bg);
@@ -45,9 +40,14 @@ body {
     isolation: isolate;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 img,
 video,
-canvas {
+canvas,
+svg {
     max-width: 100%;
 }
 
@@ -68,14 +68,14 @@ textarea {
     -webkit-tap-highlight-color: transparent;
 }
 
-button,
-a {
-    touch-action: manipulation;
-}
-
 a {
     text-decoration-thickness: from-font;
     text-underline-offset: 4px;
+}
+
+button,
+a {
+    touch-action: manipulation;
 }
 
 ::selection {
@@ -177,7 +177,8 @@ a {
 }
 
 @keyframes cyan-pulse {
-    0%, 100% {
+    0%,
+    100% {
         box-shadow: 0 0 12px rgba(6, 182, 212, 0.12);
     }
 
@@ -320,7 +321,12 @@ a {
     height: 100%;
     transform: scaleX(0);
     transform-origin: left center;
-    background: linear-gradient(90deg, #0891b2, #22d3ee, #67e8f9);
+    background: linear-gradient(
+        90deg,
+        #0891b2,
+        #22d3ee,
+        #67e8f9
+    );
     box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
 }
 
@@ -409,47 +415,5 @@ a {
     .project-card,
     .animated-button {
         transform: none;
-    }
-}
-
-
-/* Keep technology logos at a normal size */
-.tech-stack img,
-.techStack img,
-.tech-stack-icons img,
-.techStackIcons img {
-    width: 48px;
-    height: 48px;
-    max-width: 48px;
-    max-height: 48px;
-    object-fit: contain;
-    flex-shrink: 0;
-}
-
-/* Keep technology logo containers from stretching */
-.tech-stack,
-.techStack,
-.tech-stack-icons,
-.techStackIcons {
-    min-width: 0;
-}
-
-.tech-stack img,
-.techStack img,
-.tech-stack-icons img,
-.techStackIcons img {
-    display: block;
-}
-
-/* Responsive logo sizing */
-@media (max-width: 480px) {
-    .tech-stack img,
-    .techStack img,
-    .tech-stack-icons img,
-    .techStackIcons img {
-        width: 36px;
-        height: 36px;
-        max-width: 36px;
-        max-height: 36px;
     }
 }
