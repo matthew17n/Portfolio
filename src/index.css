@@ -129,65 +129,24 @@ body {
   animation: fadeSlideUp 0.8s ease-out 0.6s both;
 }
 
-.hero-photo {
-  animation: floatPhoto 4s ease-in-out infinite;
-}
-
-@keyframes floatPhoto {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-photo {
-    animation: none;
-  }
-}
-
 .photo-frame {
-  position: relative;
   display: inline-flex;
-  padding: 8px;
+  padding: 5px;
+  border: 2px solid #06b6d4;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+  transition: box-shadow 0.3s ease;
 }
 
-.photo-frame::before,
-.photo-frame::after {
-  content: "";
-  position: absolute;
-  width: 45px;
-  height: 45px;
-  border-color: #06b6d4;
-  border-style: solid;
-  pointer-events: none;
-}
-
-.photo-frame::before {
-  top: 0;
-  left: 0;
-  border-width: 2px 0 0 2px;
-}
-
-.photo-frame::after {
-  right: 0;
-  bottom: 0;
-  border-width: 0 2px 2px 0;
+.photo-frame:hover {
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.6);
 }
 
 .photo-frame .hero-photo {
   display: block;
-  border-radius: 0;
-  filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.12));
-  transition: filter 0.3s ease;
-}
-
-.photo-frame:hover .hero-photo {
-  filter: drop-shadow(0 0 12px rgba(6, 182, 212, 0.3));
-}
-.photo-frame .hero-photo {
-  display: block;
-  border-radius: 14px;
+  width: 340px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 50%;
 }
