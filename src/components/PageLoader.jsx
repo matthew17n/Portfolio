@@ -41,9 +41,14 @@ export default function PageLoader({ onComplete }) {
             <div className="loader-glow" />
 
             <div className="loader-content">
-                <div className="loader-symbol">
-                    <span className="loader-c">C</span>
-                    <span className="loader-h">H</span>
+                <div className="loader-orbital" aria-hidden="true">
+                    <div className="orbital-ring orbital-ring-one" />
+                    <div className="orbital-ring orbital-ring-two" />
+                    <div className="orbital-ring orbital-ring-three" />
+                    <div className="orbital-core" />
+                    <span className="orbital-node orbital-node-one" />
+                    <span className="orbital-node orbital-node-two" />
+                    <span className="orbital-node orbital-node-three" />
                 </div>
 
                 <h1 className="loader-title">CHIN PORTFOLIO</h1>
