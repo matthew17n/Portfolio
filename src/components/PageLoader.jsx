@@ -46,7 +46,7 @@ export default function PageLoader({ onComplete }) {
                     <span className="loader-h">H</span>
                 </div>
 
-                <h1>CHIN PORTFOLIO</h1>
+                <h1 className="loader-title">CHIN PORTFOLIO</h1>
 
                 <p className="loader-subtitle">
                     CRAFTING DIGITAL EXPERIENCES
