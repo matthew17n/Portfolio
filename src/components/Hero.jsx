@@ -36,9 +36,11 @@ export default function Hero() {
                     </h2>
                 </div>
 
-                <p className="mt-5 text-white inter-normal">
-                    I&apos;m an IT student learning to build responsive, user-friendly web applications and improve my development skills through hands-on projects.
-                </p>
+              
+<p className="mt-5 text-white inter-normal">
+    I&apos;m an IT student who is eager to learn from experienced developers, gain new knowledge, improve my programming skills, and grow through hands-on projects and collaboration.
+</p>
+
 
                 <div className="mt-6 flex flex-wrap items-center gap-3">
                     {contacts.map((contact, index) => (
