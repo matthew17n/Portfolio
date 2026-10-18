@@ -1,163 +1,214 @@
 
 .page-loader {
-  position: fixed;
-  inset: 0;
-  z-index: 10000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: #151720;
-  opacity: 1;
-  color: white;
-  isolation: isolate;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #151720;
+    opacity: 1;
+    color: white;
+    isolation: isolate;
 }
 
 .loader-glow {
-  position: absolute;
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  background: rgba(6, 182, 212, 0.12);
-  filter: blur(100px);
-  animation: loaderPulse 2s ease-in-out infinite alternate;
-  pointer-events: none;
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: rgba(6, 182, 212, 0.12);
+    filter: blur(100px);
+    animation: loaderPulse 2s ease-in-out infinite alternate;
+    pointer-events: none;
 }
 
 .loader-content {
-  position: relative;
-  z-index: 1;
-  width: min(380px, calc(100% - 48px));
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(480px, calc(100% - 40px));
+    margin: 0 auto;
+    text-align: center;
 }
-
-.loader-symbol {
-  margin-bottom: 24px;
-  color: #06b6d4;
-  font-size: 42px;
-  font-weight: 800;
-  text-align: center;
-  text-shadow: 0 0 24px rgba(6, 182, 212, 0.6);
-  animation: loaderFloat 1.5s ease-in-out infinite alternate;
-}
-
-.loader-title {
-  margin: 0;
-  font-size: clamp(22px, 5vw, 30px);
-  font-weight: 800;
-  letter-spacing: 5px;
-  text-align: center;
-}
-
-.loader-subtitle {
-  margin-top: 12px;
-  margin-bottom: 32px;
-  color: #9ca3af;
-  font-size: 10px;
-  letter-spacing: 3px;
-  text-align: center;
-}
-
-.loader-track {
-  height: 3px;
-  overflow: hidden;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.loader-progress {
-  height: 100%;
-  border-radius: 10px;
-  background: #06b6d4;
-  box-shadow: 0 0 15px #06b6d4;
-  transition: width 0.08s linear;
-}
-
-.loader-status {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 12px;
-  color: #9ca3af;
-  font-size: 10px;
-  letter-spacing: 1px;
-}
-
-.loader-status span:last-child {
-  color: #22d3ee;
-  font-variant-numeric: tabular-nums;
-}
-
-@keyframes loaderPulse {
-  from {
-    transform: scale(0.85);
-    opacity: 0.5;
-  }
-  to {
-    transform: scale(1.15);
-    opacity: 1;
-  }
-}
-
-@keyframes loaderFloat {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-8px);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .loader-glow,
-  .loader-symbol {
-    animation: none;
-  }
-
-  .loader-progress {
-    transition: none;
-  }
-}
-
 
 .loader-symbol {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 4px;
     margin-bottom: 24px;
     color: #06b6d4;
-    font-size: 56px;
+    font-size: 52px;
     font-weight: 800;
     line-height: 1;
-    letter-spacing: -4px;
-    text-shadow: 0 0 12px rgba(6, 182, 212, 0.6),
-                 0 0 30px rgba(6, 182, 212, 0.3);
+    letter-spacing: -3px;
+    text-shadow:
+        0 0 12px rgba(6, 182, 212, 0.45),
+        0 0 28px rgba(6, 182, 212, 0.2);
+    animation: loaderFloat 1.5s ease-in-out infinite alternate;
 }
 
-.loader-c {
+.loader-c,
+.loader-h {
     animation: loader-letter-glow 2s ease-in-out infinite alternate;
 }
 
 .loader-h {
-    animation: loader-letter-glow 2s ease-in-out 0.4s infinite alternate;
+    animation-delay: 0.4s;
+}
+
+.loader-title {
+    width: 100%;
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(24px, 5vw, 36px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: clamp(2px, 0.6vw, 4px);
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.loader-content h1 {
+    width: 100%;
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(24px, 5vw, 36px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: clamp(2px, 0.6vw, 4px);
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.loader-subtitle {
+    margin: 16px 0 0;
+    color: #9ca3af;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.8;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.loader-track {
+    width: 100%;
+    height: 4px;
+    margin-top: 40px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.loader-progress {
+    height: 100%;
+    border-radius: 999px;
+    background: #06b6d4;
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.7);
+    transition: width 0.08s linear;
+}
+
+.loader-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 12px;
+    margin-top: 14px;
+    color: #9ca3af;
+    font-size: 11px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.loader-status span:last-child {
+    flex-shrink: 0;
+    color: #22d3ee;
+    font-variant-numeric: tabular-nums;
+}
+
+@keyframes loaderPulse {
+    from {
+        transform: scale(0.85);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+
+@keyframes loaderFloat {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-6px);
+    }
 }
 
 @keyframes loader-letter-glow {
     from {
-        opacity: 0.75;
-        text-shadow: 0 0 8px rgba(6, 182, 212, 0.4);
+        opacity: 0.8;
+        text-shadow: 0 0 8px rgba(6, 182, 212, 0.3);
     }
 
     to {
         opacity: 1;
-        text-shadow: 0 0 18px rgba(6, 182, 212, 0.9),
-                     0 0 36px rgba(6, 182, 212, 0.5);
+        text-shadow:
+            0 0 16px rgba(6, 182, 212, 0.65),
+            0 0 28px rgba(6, 182, 212, 0.25);
     }
 }
 
 @media (max-width: 480px) {
+    .loader-content {
+        width: calc(100% - 40px);
+    }
+
     .loader-symbol {
-        font-size: 44px;
         margin-bottom: 20px;
+        font-size: 44px;
+    }
+
+    .loader-content h1,
+    .loader-title {
+        letter-spacing: 2px;
+    }
+
+    .loader-subtitle {
+        margin-top: 12px;
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .loader-track {
+        margin-top: 30px;
+    }
+
+    .loader-status {
+        gap: 8px;
+        font-size: 9px;
+        letter-spacing: 0.5px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .loader-glow,
+    .loader-symbol,
+    .loader-c,
+    .loader-h {
+        animation: none;
+    }
+
+    .loader-progress {
+        transition: none;
     }
 }
