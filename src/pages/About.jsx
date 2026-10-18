@@ -1,3 +1,4 @@
+
 import { LuBlocks, LuUserCheck } from "react-icons/lu";
 import { BsLightningCharge } from "react-icons/bs";
 import { AboutMeCard } from "../components/Cards";
@@ -8,33 +9,48 @@ export default function Aboutpage() {
     const aboutMe = [
         {
             title: "Clean Architecture",
-            description: "I dont't just write code that work; I write code that lasts. I focus on modular, reusable React components and scalable Tailwind design system",
-            icon: <LuBlocks className="h-10 w-10 text-blue-400" />
+            description: "I don't just write code that works; I focus on reusable React components and organized designs while continuing to develop my programming skills.",
+            icon: <LuBlocks className="h-8 w-8 text-blue-400 sm:h-10 sm:w-10" />
         },
         {
             title: "Performance First",
-            description: `Quality means speed. I optimize every asset and monitor Core Web vitals to ensure a seamless, "instant" feel for the end-user`,
-            icon: <BsLightningCharge className="h-10 w-10 text-green-300" />
+            description: "I aim to build responsive websites that load smoothly and provide a good experience for users across different devices.",
+            icon: <BsLightningCharge className="h-8 w-8 text-green-300 sm:h-10 sm:w-10" />
         },
         {
             title: "User-Centric Design",
-            description: "Prioritizing the end-user by creating intuitive, accessible, and inclusive interfaces. I believe a website should not only look good but feel seamless and natural to navigate for everyone",
-            icon: <LuUserCheck className="h-10 w-10 text-cyan-300" />
+            description: "I enjoy creating interfaces that are intuitive, accessible, and easy to navigate on both mobile and desktop screens.",
+            icon: <LuUserCheck className="h-8 w-8 text-cyan-300 sm:h-10 sm:w-10" />
         }
     ];
 
     return (
-        <section className="flex flex-col items-center mt-9" id="about">
-            <h1 className="inter-bold text-white text-3xl">About <span className="text-cyan-400">Matthew Chin</span></h1>
-            <p className="w-[70%] text-center inter-normal text-xl text-white mt-12 leading-9.5">
-                Hi! It&apos;s Ed Thomas Matthew Chin and I&apos;m a student, currently learning and growing in the field of programming and technology. I have a strong interest in coding and I enjoy building projects that improve my skills and creativity.
+        <section
+            id="about"
+            className="mt-8 flex w-full min-w-0 flex-col items-center overflow-x-clip px-4 py-8 sm:mt-10 sm:px-6 sm:py-10 lg:px-8"
+        >
+            <h1 className="inter-bold max-w-full text-center text-2xl text-white sm:text-3xl">
+                About <span className="text-cyan-400">Matthew Chin</span>
+            </h1>
+
+            <p className="mt-6 w-full max-w-3xl text-center text-base leading-7 text-white inter-normal sm:mt-8 sm:text-lg sm:leading-8 lg:mt-10">
+                Hi! It&apos;s Ed Thomas Matthew Chin, and I&apos;m an IT student currently learning and growing in programming and technology. I enjoy building projects that help me improve my coding skills, creativity, and problem-solving abilities.
             </p>
-            <div className="flex flex-row gap-6 mt-15 mb-20">
+
+            <div className="mt-8 mb-10 grid w-full max-w-6xl grid-cols-1 items-stretch gap-5 sm:mt-10 sm:mb-14 sm:grid-cols-2 sm:gap-6 lg:mt-12 lg:mb-16 lg:grid-cols-3">
                 {aboutMe.map((about) => (
-                    <AboutMeCard icon={about.icon} title={about.title} description={about.description} />
+                    <AboutMeCard
+                        key={about.title}
+                        icon={about.icon}
+                        title={about.title}
+                        description={about.description}
+                    />
                 ))}
             </div>
-            <AutoCarousel images={images} />
+
+            <div className="w-full min-w-0 max-w-6xl">
+                <AutoCarousel images={images} />
+            </div>
         </section>
     );
 }
