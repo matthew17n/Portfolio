@@ -241,3 +241,34 @@ section {
   }
 }
 
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    overscroll-behavior-y: auto;
+    scroll-behavior: smooth;
+}
+
+section[id] {
+    scroll-margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 120px;
+    }
+
+    section[id] {
+        scroll-margin-top: 120px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
