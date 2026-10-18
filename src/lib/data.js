@@ -1,4 +1,4 @@
-```javascript
+
 import CSSLogo from '../assets/css3-logo.png';
 import HTMLLogo from '../assets/html5-logo.png';
 import JSLogo from '../assets/javascript-1.svg';
@@ -105,4 +105,3 @@ export const images = [
     { url: MongoDBLogo },
     { url: TailwindLogo }
 ];
-```
