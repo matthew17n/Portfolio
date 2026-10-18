@@ -43,16 +43,8 @@ export default function Hero() {
             </div>
             <div className="w-[50%] relative flex items-center justify-center">
                 {/* this part is for the image */}
-                <div>
-                    {/* <svg viewBox="0 0 300 300" className="w-50 h-50 drop-shadow-[0_8px_12px_rgba(6,182,212,0.7)]">
-                        <polygon 
-                            points="100,10 180,55 180,145 100,190 20,145 20,55"
-                            fill="#3B82F6"
-                            stroke="#06B6D4"
-                            strokeWidth="8"
-                            strokeLinejoin="round"
-                        />
-                    </svg> */}
+                
+                  <div className="photo-frame">
                     <img 
                         src="/matthew-chin.png"
                         alt="formal-picture"
