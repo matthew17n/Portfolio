@@ -1,6 +1,6 @@
-
+```jsx
 import { useEffect, useRef, useState } from "react";
-import { LuCode2, LuBug, LuLayers3, LuRocket } from "react-icons/lu";
+import { LuCode, LuBug, LuLayers, LuRocket } from "react-icons/lu";
 
 const milestones = [
     {
@@ -10,7 +10,7 @@ const milestones = [
         description:
             "My coding journey began through school and self-learning. As I explored web development, I discovered how code could turn simple ideas into interactive digital experiences.",
         detail: "Learning through practice",
-        icon: LuCode2,
+        icon: LuCode,
     },
     {
         number: "02",
@@ -28,7 +28,7 @@ const milestones = [
         description:
             "As I continued learning, I began applying my knowledge to projects. Each build gave me a chance to experiment, solve problems, and better understand how different parts of an application work together.",
         detail: "Learning by building",
-        icon: LuLayers3,
+        icon: LuLayers,
     },
     {
         number: "04",
@@ -186,3 +186,4 @@ export default function Journey() {
         </section>
     );
 }
+```
