@@ -1,5 +1,6 @@
+
 import { LinkCircle } from "./Links";
-import { LuFacebook, LuMail, LuInstagram } from 'react-icons/lu';
+import { LuFacebook, LuMail, LuInstagram } from "react-icons/lu";
 
 export default function Hero() {
     const contacts = [
@@ -18,36 +19,49 @@ export default function Hero() {
     ];
 
     return (
-      <div className="hero-content flex flex-row gap-2 items-center mt-9 w-full">
+        <div className="hero-content flex flex-row gap-2 items-center mt-9 w-full">
             <div className="w-[50%]">
-                {/* this part is for the text, links, and cta button */}
                 <div className="flex flex-col gap-3">
-                  <h2 className="hero-greeting text-white inter-semibold text-3xl">Hello, It&apos;s Me</h2>
-<h1 className="hero-name text-white inter-bold text-5xl">Ed Thomas Matthew Chin</h1>
-<h2 className="hero-role text-white inter-semibold text-3xl">And I&apos;m a <span className="text-cyan-500">Frontend Developer</span></h2>
+                    <h2 className="hero-greeting text-white inter-semibold text-3xl">
+                        Hello, It&apos;s Me
+                    </h2>
+                    <h1 className="hero-name text-white inter-bold text-5xl">
+                        Ed Thomas Matthew Chin
+                    </h1>
+                    <h2 className="hero-role text-white inter-semibold text-3xl">
+                        And I&apos;m a <span className="text-cyan-500">Frontend Developer</span>
+                    </h2>
                 </div>
+
                 <p className="mt-5 text-white inter-normal">
-                    I specialize in transforming complex ideas into polished, high-performance web applications.
+                    I&apos;m an IT student learning to build responsive, user-friendly web applications and improve my development skills through hands-on projects.
                 </p>
+
                 <div className="flex flex-row gap-3 items-center mt-6">
                     {contacts.map((contact, index) => (
-                        <LinkCircle key={index} contact={contact.contact} icon={contact.icon} />
+                        <LinkCircle
+                            key={index}
+                            contact={contact.contact}
+                            icon={contact.icon}
+                        />
                     ))}
                 </div>
-                <button
-                    type="button"
-                    className="mt-6 px-5 py-2 inter-semibold text-lg bg-cyan-400 drop-shadow-[0_8px_12px_rgba(6,182,212,0.7)] rounded-4xl hover:cursor-pointer hover:bg-cyan-400/80 transition-colors duration-300"
+
+                <a
+                    href="/resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-block px-5 py-2 inter-semibold text-lg bg-cyan-400 drop-shadow-[0_8px_12px_rgba(6,182,212,0.7)] rounded-4xl hover:cursor-pointer hover:bg-cyan-400/80 transition-colors duration-300 text-black text-center"
                 >
                     Download CV
-                </button>
+                </a>
             </div>
+
             <div className="w-[50%] relative flex items-center justify-center">
-                {/* this part is for the image */}
-                
-                  <div className="photo-frame">
-                    <img 
+                <div className="photo-frame">
+                    <img
                         src="/matthew-chin.png"
-                        alt="formal-picture"
+                        alt="Ed Thomas Matthew Chin"
                         className="hero-photo h-130 w-95 object-contain"
                     />
                 </div>
