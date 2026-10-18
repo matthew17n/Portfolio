@@ -1,29 +1,30 @@
+
 import { LuGithub } from "react-icons/lu";
-import { MdLiveTv } from 'react-icons/md';
+import { MdLiveTv } from "react-icons/md";
 
 export function SkillCard({ logo, alt, skill, description }) {
     return (
-        <div className="relative flex flex-row px-3 py-2 w-70">
+        <div className="group relative flex w-full min-w-0 rounded-xl p-3 sm:p-4">
+            <div className="absolute -inset-1 rounded-lg bg-linear-to-t from-red-600 via-pink-600 to-violet-600 opacity-30 blur-sm transition duration-300 group-hover:opacity-50 group-hover:blur-lg" />
             <div
-                className="absolute -inset-1 rounded-lg bg-linear-to-t from-red-600 via-pink-600 to-violet-600 opacity-30 blur-sm group-hover:opacity-50 group-hover:blur-lg transition duration-300"
-            ></div>
-            <div
-                className="absolute inset-0 z-0 rounded-xl"
+                className="absolute inset-0 rounded-xl"
                 style={{
-                    background: "radial-gradient(125% 125% at 50% 90%, #000000 40%, #0d1a36 100%)",
+                    background:
+                        "radial-gradient(125% 125% at 50% 90%, #000000 40%, #0d1a36 100%)",
                 }}
             />
-            {/* Your Content/Components */}
-            <div className="relative z-10 flex flex-col gap-5">
-                <div className="relative z-10 text-white flex flex-row gap-3 items-center rounded-lg p-2 justify-center">
-                    <img 
+            <div className="relative z-10 flex min-w-0 flex-1 flex-col gap-4 sm:gap-5">
+                <div className="flex flex-wrap items-center justify-center gap-3 rounded-lg p-2 text-white">
+                    <img
                         src={logo}
                         alt={alt}
-                        className="h-10 w-10"
+                        className="h-9 w-9 shrink-0 object-contain sm:h-10 sm:w-10"
                     />
-                    <span className="inter-semibold text-lg">{skill}</span>
+                    <span className="inter-semibold text-base sm:text-lg">
+                        {skill}
+                    </span>
                 </div>
-                <p className="text-gray-200 inter-medium text-sm">
+                <p className="break-words text-sm leading-6 text-gray-200 inter-medium">
                     {description}
                 </p>
             </div>
@@ -31,60 +32,72 @@ export function SkillCard({ logo, alt, skill, description }) {
     );
 }
 
-export function CardThumbnail({ thumbnail, projectName, overview, tools, githubLink, liveDemo }) {
+export function CardThumbnail({
+    thumbnail,
+    projectName,
+    overview,
+    tools = [],
+    githubLink,
+    liveDemo,
+}) {
     return (
-        <div className="relative w-sm">
-            <div
-                className="absolute -inset-2 rounded-lg bg-linear-to-br from-green-600 via-fuchsia-600 to-amber-600 opacity-15 blur-xl"
-            ></div>
-            <div className="relative z-15 bg-zinc-900 w-full flex flex-col rounded-xl">
-                <div className="px-3 py-3">
-                    <img 
-                        src={thumbnail} 
-                        alt="project-thumbnail"
-                        className="object-cover rounded-lg aspect-3/2 border border-gray-50/20 w-full" 
+        <div className="group relative w-full min-w-0">
+            <div className="absolute -inset-1 rounded-lg bg-linear-to-br from-green-600 via-fuchsia-600 to-amber-600 opacity-15 blur-xl transition duration-300 group-hover:opacity-30" />
+            <div className="relative z-10 flex h-full min-w-0 flex-col overflow-hidden rounded-xl bg-zinc-900">
+                <div className="p-3 sm:p-4">
+                    <img
+                        src={thumbnail}
+                        alt={`${projectName} project preview`}
+                        loading="lazy"
+                        className="aspect-3/2 w-full rounded-lg border border-gray-50/20 object-cover"
                     />
                 </div>
-                <div className="flex flex-col gap-3 mx-5 py-5">
-                    <h2 className="text-white inter-semibold text-xl">
+
+                <div className="flex min-w-0 flex-1 flex-col gap-3 px-4 pb-5 sm:px-5 sm:pb-6">
+                    <h2 className="break-words text-lg text-white inter-semibold sm:text-xl">
                         {projectName}
                     </h2>
-                    <p className="text-gray-300 text-justify inter-normal text-sm">
+
+                    <p className="break-words text-sm leading-6 text-gray-300 inter-normal">
                         {overview}
                     </p>
-                    <ul className="flex flex-row gap-2">
+
+                    <ul className="flex flex-wrap gap-2">
                         {tools.map((tool, index) => (
                             <li
-                                key={index}
-                                className="border border-cyan-400 py-1 px-1.5 inter-medium rounded-2xl text-gray-200 text-xs"
+                                key={`${tool}-${index}`}
+                                className="max-w-full break-words rounded-2xl border border-cyan-400 px-2 py-1 text-xs text-gray-200 inter-medium"
                             >
                                 {tool}
                             </li>
                         ))}
                     </ul>
-                    <div className="flex flex-row gap-5 items-center justify-end mt-2">
+
+                    <div className="mt-auto flex flex-wrap items-center justify-end gap-2 pt-3">
                         {githubLink && (
                             <a
                                 href={githubLink}
-                                rel="noopener"
+                                rel="noopener noreferrer"
                                 target="_blank"
-                                className="border border-white text-white inter-semibold text-sm px-2.5 py-2 rounded-xl flex flex-row gap-2 items-center hover:cursor-pointer hover:bg-white hover:text-black transition-colors duration-250"
+                                className="inline-flex min-w-0 items-center justify-center gap-2 rounded-xl border border-white px-3 py-2 text-sm text-white transition-colors duration-300 hover:bg-white hover:text-black"
                             >
                                 <span>Source code</span>
-                                <LuGithub className="h-5.5 w-5.5" />
+                                <LuGithub className="h-5 w-5 shrink-0" />
                             </a>
                         )}
-                        <a
-                            href={liveDemo}
-                            rel="noopener"
-                            target="_blank"
-                            className="bg-cyan-500 text-white inter-semibold text-sm px-2.5 py-2 rounded-xl flex flex-row gap-2 items-center hover:cursor-pointer hover:bg-cyan-500/80 transition-colors duration-250"
-                        >
-                            <span>Live Demo</span>
-                            <MdLiveTv className="h-5.5 w-5.5" />
-                        </a>
+
+                        {liveDemo && (
+                            <a
+                                href={liveDemo}
+                                rel="noopener noreferrer"
+                                target="_blank"
+                                className="inline-flex min-w-0 items-center justify-center gap-2 rounded-xl bg-cyan-500 px-3 py-2 text-sm text-white transition-colors duration-300 hover:bg-cyan-500/80"
+                            >
+                                <span>Live Demo</span>
+                                <MdLiveTv className="h-5 w-5 shrink-0" />
+                            </a>
+                        )}
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -93,14 +106,14 @@ export function CardThumbnail({ thumbnail, projectName, overview, tools, githubL
 
 export function AboutMeCard({ icon, title, description }) {
     return (
-        <div className=" bg-zinc-800 border border-gray-50/30 rounded-lg px-3 py-1.5 w-90">
-            <div className="flex flex-col gap-3">
+        <div className="flex h-full w-full min-w-0 flex-col rounded-lg border border-gray-50/30 bg-zinc-800 p-4 sm:p-5">
+            <div className="flex flex-col items-start gap-3">
                 {icon}
-                <h3 className="text-gray-50 inter-semibold text-lg">
+                <h3 className="break-words text-lg text-gray-50 inter-semibold">
                     {title}
                 </h3>
             </div>
-            <p className="text-gray-200 inter-normal">
+            <p className="mt-3 break-words text-sm leading-6 text-gray-200 inter-normal sm:text-base">
                 {description}
             </p>
         </div>
