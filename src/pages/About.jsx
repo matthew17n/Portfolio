@@ -18,7 +18,7 @@ export default function Aboutpage() {
         },
         {
             title: "User-Centric Design",
-            description: "Prioritizing the end-user by creting intuitive, accessible, and inclusive interfaces. I believe a website should not only look good but feel seamless and natural to navigate for everyone",
+            description: "Prioritizing the end-user by creating intuitive, accessible, and inclusive interfaces. I believe a website should not only look good but feel seamless and natural to navigate for everyone",
             icon: <LuUserCheck className="h-10 w-10 text-cyan-300" />
         }
     ];
