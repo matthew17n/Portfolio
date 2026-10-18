@@ -21,10 +21,6 @@
 
 @media (pointer: coarse), (prefers-reduced-motion: reduce) {
 
-/* ========================================
-   CYBER ARROW CURSOR
-   Adjust --cyber-cursor-width to resize it.
-======================================== */
 
 :root {
     --cyber-cursor-width: 24px;
