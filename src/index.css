@@ -495,3 +495,37 @@ img {
     }
 }
 
+
+/* Keep moving technology logos in one horizontal line */
+.slow-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: max-content;
+    gap: 2rem;
+    animation: scroll 40s linear infinite;
+    will-change: transform;
+}
+
+.slow-scroll img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    max-width: none;
+    flex: 0 0 48px;
+    object-fit: contain;
+}
+
+/* Smaller logos on mobile */
+@media (max-width: 768px) {
+    .slow-scroll {
+        gap: 1.25rem;
+    }
+
+    .slow-scroll img {
+        width: 36px;
+        height: 36px;
+        flex-basis: 36px;
+    }
+}
+
