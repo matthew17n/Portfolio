@@ -1,4 +1,4 @@
-```jsx
+
 import { useEffect, useRef, useState } from "react";
 import { LuCode, LuBug, LuLayers, LuRocket } from "react-icons/lu";
 
@@ -186,4 +186,4 @@ export default function Journey() {
         </section>
     );
 }
-```
+
