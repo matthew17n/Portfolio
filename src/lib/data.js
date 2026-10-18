@@ -55,7 +55,7 @@ export const projects = [
         `,
         tools: ['React', 'JavaScript', 'Node.js', 'Express'],
         githubLink: "https://github.com/Rev0710/Votara",
-        liveDemo: ""
+        liveDemo: "https://votara-election-system.vercel.app/"
     }
 ];
 
