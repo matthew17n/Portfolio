@@ -595,3 +595,80 @@ body {
         transition: none !important;
     }
 }
+
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    width: 32px;
+    height: 40px;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-3px, -2px);
+    transition: opacity 180ms ease;
+    will-change: left, top, transform;
+}
+
+.custom-cursor.cursor-visible {
+    opacity: 1;
+}
+
+.cyber-arrow {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 32px;
+    height: 40px;
+    filter: drop-shadow(0 0 4px rgba(34, 211, 238, 0.5));
+    transform-origin: 15% 10%;
+    transition:
+        transform 180ms ease,
+        filter 180ms ease;
+}
+
+.cyber-arrow svg {
+    display: block;
+    overflow: visible;
+}
+
+.cyber-cursor-glow {
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgba(34, 211, 238, 0.16);
+    filter: blur(12px);
+    opacity: 0.65;
+    transition:
+        opacity 180ms ease,
+        transform 180ms ease;
+}
+
+.custom-cursor.cursor-hover .cyber-arrow {
+    transform: scale(1.16) rotate(-5deg);
+    filter: drop-shadow(0 0 7px rgba(34, 211, 238, 0.9));
+}
+
+.custom-cursor.cursor-hover .cyber-cursor-glow {
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+.custom-cursor.cursor-click .cyber-arrow {
+    transform: scale(0.88);
+}
+
+.custom-cursor.cursor-click .cyber-cursor-glow {
+    transform: scale(0.75);
+    opacity: 1;
+}
+
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+    .custom-cursor {
+        display: none !important;
+    }
+}
