@@ -2,7 +2,7 @@ import './index.css';
 import { Navbar } from './components/Navbar';
 import { sectionIds } from './lib/data.js';
 import { useScrollSpy } from './hooks/use-scroll-spy.js';
-
+import CursorEffect from './components/CursorEffect';
 // pages
 import Homepage from './pages/Home.jsx';
 import Aboutpage from './pages/About.jsx';
@@ -17,6 +17,7 @@ export default function App() {
   
   return (
     <>
+    <CursorEffect />
       <Navbar activeId={activeId} />
       <main className='mx-20 flex flex-col gap-10'>
         <Homepage />
