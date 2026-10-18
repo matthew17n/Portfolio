@@ -32,15 +32,21 @@ export default function Hero() {
 
                     <h2 className="hero-role text-2xl text-white inter-semibold sm:text-3xl">
                         And I&apos;m a{" "}
-                        <span className="text-cyan-500">Frontend Developer</span>
+                        <span className="text-cyan-500">
+                            Frontend Developer
+                        </span>
                     </h2>
                 </div>
 
-              
-<p className="mt-5 text-white inter-normal">
-    I&apos;m an IT student who is eager to learn from experienced developers, gain new knowledge, improve my programming skills, and grow through hands-on projects and collaboration.
-</p>
-
+                <p className="mt-5 text-white inter-normal leading-7">
+                    Welcome to my portfolio, where I showcase my projects,
+                    technical skills, and creativity in web development.
+                    Explore the applications I&apos;ve built, the technologies
+                    I&apos;ve worked with, and the ideas I&apos;ve turned into
+                    digital experiences. Each project reflects my journey of
+                    learning, experimenting, and growing in the world of
+                    technology.
+                </p>
 
                 <div className="mt-6 flex flex-wrap items-center gap-3">
                     {contacts.map((contact, index) => (
@@ -56,7 +62,7 @@ export default function Hero() {
                     href="/resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-6 inline-block rounded-4xl bg-cyan-400 px-5 py-2 text-center text-lg text-black inter-semibold drop-shadow-[0_8px_12px_rgba(6,182,212,0.7)] transition-colors duration-300 hover:cursor-pointer hover:bg-cyan-400/80"
+                    className="mt-6 inline-block rounded-4xl bg-cyan-400 px-5 py-2 text-center text-lg text-black inter-semibold drop-shadow-[0_8px_12px_rgba(6,182,212,0.7)] transition-all duration-300 hover:-translate-y-1 hover:cursor-pointer hover:bg-cyan-400/80 active:scale-95"
                 >
                     Download CV
                 </a>
