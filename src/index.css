@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import 'tailwindcss';
 
@@ -91,6 +92,7 @@ body {
         transform: translateX(-50%);
     }
 }
+
 .slow-scroll {
     display: flex;
     flex-wrap: nowrap;
@@ -149,33 +151,6 @@ body {
     background: transparent;
 }
 
-.hero-content {
-    animation: fadeSlideUp 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-@keyframes fadeSlideUp {
-    from {
-        opacity: 0;
-        transform: translate3d(0, 28px, 0);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-.scroll-progress-track {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10001;
-    width: 100%;
-    height: 3px;
-    pointer-events: none;
-    background: transparent;
-}
-
 .scroll-progress-bar {
     width: 100%;
     height: 100%;
@@ -183,6 +158,48 @@ body {
     transform-origin: left center;
     background: linear-gradient(90deg, #0891b2, #22d3ee, #67e8f9);
     box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+}
+
+.custom-cursor {
+    position: fixed;
+    top: -100px;
+    left: -100px;
+    z-index: 10000;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #06b6d4;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 12px rgba(6, 182, 212, 0.4);
+    transition:
+        width 200ms ease,
+        height 200ms ease,
+        background-color 200ms ease;
+}
+
+.custom-cursor::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #06b6d4;
+    content: "";
+    transform: translate(-50%, -50%);
+}
+
+.custom-cursor.cursor-click {
+    width: 16px;
+    height: 16px;
+    background: rgba(6, 182, 212, 0.25);
+}
+
+@media (pointer: coarse) {
+    .custom-cursor {
+        display: none;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -195,22 +212,6 @@ body {
     }
 }
 
-.photo-frame {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 100%;
-    padding: 5px;
-    overflow: hidden;
-    border: 2px solid #06b6d4;
-    border-radius: 50%;
-    box-shadow:
-        0 0 15px rgba(6, 182, 212, 0.2),
-        inset 0 0 12px rgba(6, 182, 212, 0.08);
-    transition:
-        box-shadow 450ms ease,
-        border-color 450ms ease;
-}
 
 .photo-frame {
     display: inline-flex;
@@ -256,6 +257,13 @@ body {
 }
 
 
+.project-card {
+  position: relative;
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+  transform: translateZ(0);
 }
 
 .project-card:hover {
@@ -329,6 +337,285 @@ body {
 .contact-section {
   isolation: isolate;
 }
+
+.contact-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.contact-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-reveal-delay {
+  transition-delay: 180ms;
+}
+
+.contact-gradient-text {
+  background-size: 200% auto;
+  animation: contactTextShine 6s ease-in-out infinite;
+}
+
+@keyframes contactTextShine {
+  0%, 100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+
+.contact-orb {
+  animation: contactOrbFloat 9s ease-in-out infinite alternate;
+}
+
+.contact-orb-two {
+  animation-delay: -4s;
+}
+
+@keyframes contactOrbFloat {
+  from {
+    transform: translate3d(0, -12px, 0) scale(1);
+  }
+  to {
+    transform: translate3d(18px, 18px, 0) scale(1.12);
+  }
+}
+
+.contact-border-glow {
+  border-radius: 1.5rem;
+  background: linear-gradient(
+    120deg,
+    rgba(34, 211, 238, 0.3),
+    transparent 35%,
+    rgba(139, 92, 246, 0.25) 70%,
+    transparent
+  );
+  opacity: 0.35;
+  filter: blur(12px);
+  transition: opacity 0.4s ease;
+}
+
+.contact-panel {
+  transition:
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    transform 0.4s ease;
+}
+
+.contact-panel:hover {
+  border-color: rgba(34, 211, 238, 0.25);
+  box-shadow: 0 0 35px rgba(34, 211, 238, 0.06);
+}
+
+.contact-section:has(.contact-panel:hover) .contact-border-glow {
+  opacity: 0.8;
+}
+
+.contact-section input,
+.contact-section textarea {
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.08);
+}
+
+.contact-section button[type="submit"] {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.contact-section button[type="submit"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.22) 50%,
+    transparent 80%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+}
+
+.contact-section button[type="submit"]:hover::before {
+  transform: translateX(120%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .contact-panel:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-reveal,
+  .contact-reveal-delay,
+  .contact-gradient-text,
+  .contact-orb,
+  .contact-panel,
+  .contact-section input,
+  .contact-section textarea {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .contact-reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .contact-panel:hover {
+    transform: none;
+  }
+}
+
+
+.journey-track {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(34, 211, 238, 0.65) 12%,
+    rgba(34, 211, 238, 0.25) 85%,
+    transparent
+  );
+}
+
+.journey-node {
+  z-index: 1;
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.journey-item:hover .journey-node {
+  transform: scale(1.08);
+  border-color: rgba(103, 232, 249, 0.9);
+  box-shadow: 0 0 24px rgba(34, 211, 238, 0.25);
+}
+
+.journey-card {
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.journey-item:hover .journey-card {
+  border-color: rgba(34, 211, 238, 0.3);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey-item,
+  .journey-node,
+  .journey-card {
+    transition: none !important;
+  }
+
+  .journey-item {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+.section-reveal {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+    transition:
+        opacity 700ms ease,
+        transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+.section-reveal.is-revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .section-reveal,
+    .section-reveal.is-revealed {
+        opacity: 1;
+        transform: none;
+        transition: none;
+        will-change: auto;
+    }
+}
+.nav-link-cinematic {
+    text-shadow: 0 0 0 transparent;
+}
+
+.nav-link-cinematic:hover {
+    color: #22d3ee;
+    text-shadow: 0 0 12px rgba(34, 211, 238, 0.45);
+}
+
+.nav-active-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    border-radius: 999px;
+    pointer-events: none;
+    opacity: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(34, 211, 238, 0.45),
+        #22d3ee,
+        rgba(34, 211, 238, 0.45)
+    );
+    box-shadow:
+        0 0 6px rgba(34, 211, 238, 0.7),
+        0 0 14px rgba(34, 211, 238, 0.35);
+    transition:
+        transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
+        width 350ms cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 200ms ease;
+}
+
+.nav-active-indicator.is-visible {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nav-link-cinematic,
+    .nav-active-indicator {
+        transition: none !important;
+    }
+}
+
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    width: 32px;
+    height: 40px;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-3px, -2px);
+    transition: opacity 180ms ease;
+    will-change: left, top, transform;
+}
+
+.custom-cursor.cursor-visible {
+    opacity: 1;
+}
+
+.cyber-arrow {
+    position: relative;
     z-index: 2;
     display: block;
     width: 32px;
@@ -379,70 +666,6 @@ body {
     opacity: 1;
 }
 
-
-@media (pointer: coarse), (prefers-reduced-motion: reduce) {
-    .custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 99999;
-    width: 32px;
-    height: 40px;
-    border: none;
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
-    pointer-events: none;
-    opacity: 0;
-    transform: translate(-3px, -2px);
-    transition: opacity 180ms ease;
-    will-change: left, top, transform;
-}
-
-.custom-cursor.cursor-visible {
-    opacity: 1;
-}
-
-/* Cyber Arrow only: remove the old circular cursor and center dot. */
-.custom-cursor::before,
-.custom-cursor::after {
-    content: none !important;
-    display: none !important;
-}
-
-.cyber-arrow {
-    position: relative;
-    z-index: 2;
-    display: block;
-    width: 32px;
-    height: 40px;
-    filter: drop-shadow(0 0 4px rgba(34, 211, 238, 0.5));
-    transform-origin: 15% 10%;
-    transition:
-        transform 180ms ease,
-        filter 180ms ease;
-}
-
-.cyber-arrow svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-}
-
-/* Hide the circular glow so only the arrow remains visible. */
-.cyber-cursor-glow {
-    display: none !important;
-}
-
-.custom-cursor.cursor-hover .cyber-arrow {
-    transform: scale(1.16) rotate(-5deg);
-    filter: drop-shadow(0 0 7px rgba(34, 211, 238, 0.9));
-}
-
-.custom-cursor.cursor-click .cyber-arrow {
-    transform: scale(0.88);
-}
 
 @media (pointer: coarse), (prefers-reduced-motion: reduce) {
     .custom-cursor {
