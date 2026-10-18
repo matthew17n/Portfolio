@@ -7,6 +7,7 @@ import CursorEffect from "./components/CursorEffect";
 import ScrollProgress from "./components/ScrollProgress";
 import { useCallback, useEffect, useState } from "react";
 import PageLoader from "./components/PageLoader";
+import SectionReveal from "./components/SectionReveal.jsx";
 import Homepage from "./pages/Home.jsx";
 import Aboutpage from "./pages/About.jsx";
 import Journey from "./pages/Journey.jsx";
@@ -41,6 +42,7 @@ export default function App() {
             )}
 
             <CursorEffect />
+            <SectionReveal />
 
             <div className="min-h-screen w-full min-w-0 overflow-x-clip">
                 <Navbar activeId={activeId} />
