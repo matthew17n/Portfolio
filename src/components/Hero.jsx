@@ -22,9 +22,9 @@ export default function Hero() {
             <div className="w-[50%]">
                 {/* this part is for the text, links, and cta button */}
                 <div className="flex flex-col gap-3">
-                    <h2 className="text-white inter-semibold text-3xl">Hello, It&apos;s Me</h2>
-                    <h1 className="text-white inter-bold text-5xl">Ed Thomas Matthew Chin</h1>
-                    <h2 className="text-white inter-semibold text-3xl">And I&apos;m a <span className="text-cyan-500">Frontend Developer</span></h2>
+                  <h2 className="hero-greeting text-white inter-semibold text-3xl">Hello, It&apos;s Me</h2>
+<h1 className="hero-name text-white inter-bold text-5xl">Ed Thomas Matthew Chin</h1>
+<h2 className="hero-role text-white inter-semibold text-3xl">And I&apos;m a <span className="text-cyan-500">Frontend Developer</span></h2>
                 </div>
                 <p className="mt-5 text-white inter-normal">
                     I specialize in transforming complex ideas into polished, high-performance web applications.
