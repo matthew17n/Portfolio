@@ -116,3 +116,15 @@ body {
     animation: none;
   }
 }
+
+.hero-greeting {
+  animation: fadeSlideUp 0.8s ease-out 0.2s both;
+}
+
+.hero-name {
+  animation: fadeSlideUp 0.8s ease-out 0.4s both;
+}
+
+.hero-role {
+  animation: fadeSlideUp 0.8s ease-out 0.6s both;
+}
