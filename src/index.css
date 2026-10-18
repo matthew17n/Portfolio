@@ -1,305 +1,309 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import 'tailwindcss';
 
-html {
-  scroll-behavior: smooth;
+:root {
+    color-scheme: dark;
+    --portfolio-bg: #20242d;
+    --portfolio-surface: #181b24;
+    --portfolio-cyan: #06b6d4;
+    --portfolio-cyan-bright: #22d3ee;
+    --portfolio-text: #f9fafb;
+    --portfolio-muted: #9ca3af;
+    --motion-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+    --motion-standard: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-section {
-  scroll-margin-top: 3rem;
-}
-
-body {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  background-color: rgba(32, 36, 45);
-}
-
-.bg-primary {
-  background-color: rgba(32, 36, 45);
-}
-
-.inter-thin {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
-}
-
-.inter-extralight {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
-}
-
-.inter-light {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.inter-normal {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.inter-medium {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.inter-semibold {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.inter-bold {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.inter-extrabold {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.inter-black {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 900;
-  font-style: normal;
-}
-
-.slow-scroll {
-  animation: scroll 40s linear infinite;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes fadeSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-content {
-  animation: fadeSlideUp 1s ease-out both;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-content {
-    animation: none;
-  }
-}
-
-.hero-greeting {
-  animation: fadeSlideUp 0.8s ease-out 0.2s both;
-}
-
-.hero-name {
-  animation: fadeSlideUp 0.8s ease-out 0.4s both;
-}
-
-.hero-role {
-  animation: fadeSlideUp 0.8s ease-out 0.6s both;
-}
-
-.photo-frame {
-  display: inline-flex;
-  padding: 5px;
-  border: 2px solid #06b6d4;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
-  transition: box-shadow 0.3s ease;
-}
-
-.photo-frame:hover {
-  box-shadow: 0 0 25px rgba(6, 182, 212, 0.6);
-}
-
-.photo-frame .hero-photo {
-  display: block;
-  width: 340px;
-  height: 340px;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-
-.custom-cursor {
-  position: fixed;
-  top: -100px;
-  left: -100px;
-  width: 24px;
-  height: 24px;
-  border: 2px solid #06b6d4;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 12px rgba(6, 182, 212, 0.4);
-  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
-}
-
-.custom-cursor::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 5px;
-  height: 5px;
-  background: #06b6d4;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.custom-cursor.cursor-click {
-  width: 16px;
-  height: 16px;
-  background: rgba(6, 182, 212, 0.25);
-}
-
-@media (pointer: coarse), (prefers-reduced-motion: reduce) {
-  .custom-cursor {
-    display: none;
-  }
-}
-
 
 html {
-  width: 100%;
-  max-width: 100%;
-  scroll-behavior: smooth;
-  scroll-padding-top: 100px;
-}
-
-body {
-  width: 100%;
-  min-width: 0;
-  margin: 0;
-  overflow-x: clip;
-}
-
-#root {
-  width: 100%;
-  min-width: 0;
-  overflow-x: clip;
-}
-
-img,
-video,
-canvas,
-svg {
-  max-width: 100%;
-}
-
-section {
-  width: 100%;
-  min-width: 0;
-  scroll-margin-top: 100px;
-}
-
-@media (max-width: 640px) {
-  section {
-    scroll-margin-top: 120px;
-  }
-
-  h1 {
-    overflow-wrap: anywhere;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-}
-
-
-html {
+    width: 100%;
+    max-width: 100%;
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
     -webkit-text-size-adjust: 100%;
 }
 
 body {
-    overscroll-behavior-y: auto;
-    scroll-behavior: smooth;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    overflow-x: clip;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    background-color: var(--portfolio-bg);
+    color: var(--portfolio-text);
 }
 
-section[id] {
+#root {
+    width: 100%;
+    min-width: 0;
+    overflow-x: clip;
+    isolation: isolate;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img,
+video,
+canvas,
+svg {
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+section {
+    width: 100%;
+    min-width: 0;
     scroll-margin-top: 100px;
 }
 
-@media (max-width: 768px) {
-    html {
-        scroll-padding-top: 120px;
+button,
+a,
+input,
+textarea {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    text-decoration-thickness: from-font;
+    text-underline-offset: 4px;
+}
+
+button,
+a {
+    touch-action: manipulation;
+}
+
+::selection {
+    color: #ffffff;
+    background: rgba(6, 182, 212, 0.35);
+}
+
+.bg-primary {
+    background-color: var(--portfolio-bg);
+}
+
+.inter-thin {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.inter-extralight {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.inter-light {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.inter-normal {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-medium {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.inter-semibold {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-bold {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.inter-extrabold {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.inter-black {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 28px, 0);
     }
 
-    section[id] {
-        scroll-margin-top: 120px;
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
+@keyframes cinematic-reveal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 24px, 0);
+        filter: blur(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        filter: blur(0);
     }
 }
 
+@keyframes cyan-pulse {
+    0%,
+    100% {
+        box-shadow: 0 0 12px rgba(6, 182, 212, 0.12);
+    }
 
-.scroll-progress-track {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10001;
-    width: 100%;
-    height: 3px;
-    pointer-events: none;
-    background: transparent;
+    50% {
+        box-shadow: 0 0 24px rgba(6, 182, 212, 0.28);
+    }
 }
 
-.scroll-progress-bar {
-    width: 100%;
-    height: 100%;
-    transform-origin: left center;
-    background: linear-gradient(90deg, #0891b2, #22d3ee, #67e8f9);
-    box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.slow-scroll {
+    animation: scroll 40s linear infinite;
     will-change: transform;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .scroll-progress-bar {
-        will-change: auto;
+.hero-content {
+    animation: fadeSlideUp 900ms var(--motion-smooth) both;
+}
+
+.hero-greeting {
+    animation: fadeSlideUp 800ms var(--motion-smooth) 100ms both;
+}
+
+.hero-name {
+    animation: fadeSlideUp 900ms var(--motion-smooth) 200ms both;
+}
+
+.hero-role {
+    animation: fadeSlideUp 900ms var(--motion-smooth) 300ms both;
+}
+
+.photo-frame {
+    display: inline-flex;
+    max-width: 100%;
+    padding: 5px;
+    overflow: hidden;
+    border: 2px solid var(--portfolio-cyan);
+    border-radius: 50%;
+    box-shadow:
+        0 0 15px rgba(6, 182, 212, 0.2),
+        inset 0 0 12px rgba(6, 182, 212, 0.08);
+    transition:
+        box-shadow 450ms var(--motion-smooth),
+        border-color 450ms var(--motion-smooth);
+}
+
+.photo-frame .hero-photo {
+    display: block;
+    width: clamp(220px, 28vw, 340px);
+    height: clamp(220px, 28vw, 340px);
+    max-width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .photo-frame:hover {
+        border-color: var(--portfolio-cyan-bright);
+        box-shadow:
+            0 0 22px rgba(6, 182, 212, 0.35),
+            0 0 48px rgba(6, 182, 212, 0.12);
     }
 }
 
+.animate-cinematic {
+    animation: cinematic-reveal 750ms var(--motion-smooth) both;
+}
+
+.animation-delay-100 {
+    animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+    animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+    animation-delay: 300ms;
+}
+
+.animation-delay-400 {
+    animation-delay: 400ms;
+}
+
+.project-card {
+    transition:
+        transform 400ms var(--motion-smooth),
+        border-color 350ms ease,
+        box-shadow 400ms var(--motion-smooth);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .project-card:hover {
+        transform: translate3d(0, -5px, 0);
+        border-color: rgba(34, 211, 238, 0.45);
+        box-shadow: 0 12px 35px rgba(6, 182, 212, 0.12);
+    }
+}
+
+.animated-button {
+    transition:
+        transform 250ms var(--motion-smooth),
+        box-shadow 300ms ease,
+        background-color 250ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .animated-button:hover {
+        transform: translate3d(0, -2px, 0);
+        box-shadow: 0 8px 24px rgba(6, 182, 212, 0.2);
+    }
+}
+
+.animated-button:active {
+    transform: scale(0.98);
+}
 
 .scroll-progress-track {
     position: fixed;
@@ -317,93 +321,99 @@ section[id] {
     height: 100%;
     transform: scaleX(0);
     transform-origin: left center;
-    background: linear-gradient(90deg, #0891b2, #22d3ee, #67e8f9);
+    background: linear-gradient(
+        90deg,
+        #0891b2,
+        #22d3ee,
+        #67e8f9
+    );
     box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
 }
 
-
-@keyframes cinematic-reveal {
-    from {
-        opacity: 0;
-        transform: translate3d(0, 24px, 0);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-@keyframes cyan-pulse {
-    0%, 100% {
-        box-shadow: 0 0 12px rgba(6, 182, 212, 0.12);
-    }
-
-    50% {
-        box-shadow: 0 0 24px rgba(6, 182, 212, 0.28);
-    }
-}
-
-.animate-cinematic {
-    animation: cinematic-reveal 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.animation-delay-100 {
-    animation-delay: 100ms;
-}
-
-.animation-delay-200 {
-    animation-delay: 200ms;
-}
-
-.animation-delay-300 {
-    animation-delay: 300ms;
-}
-
-.project-card {
+.custom-cursor {
+    position: fixed;
+    top: -100px;
+    left: -100px;
+    z-index: 9999;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--portfolio-cyan);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 12px rgba(6, 182, 212, 0.4);
     transition:
-        transform 300ms cubic-bezier(0.16, 1, 0.3, 1),
-        border-color 300ms ease,
-        box-shadow 300ms ease;
+        width 200ms ease,
+        height 200ms ease,
+        background-color 200ms ease;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(34, 211, 238, 0.45);
-    box-shadow: 0 12px 35px rgba(6, 182, 212, 0.12);
+.custom-cursor::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--portfolio-cyan);
+    content: "";
+    transform: translate(-50%, -50%);
 }
 
-.animated-button {
-    transition:
-        transform 200ms ease,
-        box-shadow 250ms ease,
-        background-color 250ms ease;
+.custom-cursor.cursor-click {
+    width: 16px;
+    height: 16px;
+    background: rgba(6, 182, 212, 0.25);
 }
 
-.animated-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(6, 182, 212, 0.2);
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 120px;
+    }
+
+    section {
+        scroll-margin-top: 120px;
+    }
 }
 
-.animated-button:active {
-    transform: scale(0.98);
+@media (max-width: 480px) {
+    .photo-frame .hero-photo {
+        width: min(280px, 72vw);
+        height: min(280px, 72vw);
+    }
+}
+
+@media (pointer: coarse) {
+    .custom-cursor {
+        display: none;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .animate-cinematic {
-        animation: none;
-        opacity: 1;
-        transform: none;
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .hero-content,
+    .hero-greeting,
+    .hero-name,
+    .hero-role,
+    .animate-cinematic,
+    .slow-scroll {
+        animation: none !important;
     }
 
     .project-card,
     .animated-button {
-        transition: none;
-    }
-
-    .project-card:hover,
-    .animated-button:hover,
-    .animated-button:active {
         transform: none;
     }
 }
