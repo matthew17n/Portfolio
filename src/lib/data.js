@@ -1,4 +1,4 @@
-
+```javascript
 import CSSLogo from '../assets/css3-logo.png';
 import HTMLLogo from '../assets/html5-logo.png';
 import JSLogo from '../assets/javascript-1.svg';
@@ -59,7 +59,14 @@ export const projects = [
     }
 ];
 
-export const sectionIds = ['about', 'home', 'skills', 'projects', 'contact'];
+export const sectionIds = [
+    'home',
+    'about',
+    'journey',
+    'skills',
+    'projects',
+    'contact'
+];
 
 export const navLinks = [
     {
@@ -69,6 +76,10 @@ export const navLinks = [
     {
         name: "About",
         href: "about"
+    },
+    {
+        name: "Journey",
+        href: "journey"
     },
     {
         name: "Skills",
@@ -94,3 +105,4 @@ export const images = [
     { url: MongoDBLogo },
     { url: TailwindLogo }
 ];
+```
