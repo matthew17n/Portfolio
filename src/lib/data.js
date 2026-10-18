@@ -1,3 +1,4 @@
+
 import CSSLogo from '../assets/css3-logo.png';
 import HTMLLogo from '../assets/html5-logo.png';
 import JSLogo from '../assets/javascript-1.svg';
@@ -36,9 +37,6 @@ export const projects = [
         tools: ['Figma'],
         liveDemo: "https://www.figma.com/design/gt1Y9k0lIrrYHdi51OVI5f/Untitled?t=7piqvhFRTAUG21Ae-1"
     },
-
-
-
     {
         projectName: "Birthday Template Shop",
         thumbnail: "/birthday-template-preview.jpg",
@@ -48,9 +46,19 @@ export const projects = [
         tools: ['HTML', 'CSS', 'JavaScript'],
         githubLink: "https://github.com/matthew17n/birthday-template-shop",
         liveDemo: "https://birthday-template-shop.vercel.app/"
+    },
+    {
+        projectName: "VOTARA — Online Voting System",
+        thumbnail: "/votara-preview.png",
+        overview: `
+            A collaborative online voting system developed by our group to support student elections. It includes student registration, OTP verification, candidate and election management, digital voting, election results, and administrative tools.
+        `,
+        tools: ['React', 'JavaScript', 'Node.js', 'Express'],
+        githubLink: "https://github.com/Rev0710/Votara",
+        liveDemo: ""
     }
-
 ];
+
 export const sectionIds = ['about', 'home', 'skills', 'projects', 'contact'];
 
 export const navLinks = [
