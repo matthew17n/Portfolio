@@ -56,7 +56,7 @@ export default function Hero() {
                     <img 
                         src="/matthew-chin.png"
                         alt="formal-picture"
-                        className="h-130 w-95 object-contain"
+                        className="hero-photo h-130 w-95 object-contain"
                     />
                 </div>
             </div>
