@@ -22,7 +22,9 @@ export default function PageLoader({ onComplete }) {
             if (next < 100) {
                 frame = requestAnimationFrame(animate);
             } else {
-                finishTimer = setTimeout(onComplete, 350);
+                finishTimer = setTimeout(() => {
+                    onComplete();
+                }, 350);
             }
         };
 
@@ -40,7 +42,9 @@ export default function PageLoader({ onComplete }) {
             <div className="loader-content">
                 <div className="loader-symbol">{"< />"}</div>
                 <h1 className="loader-title">MY PORTFOLIO</h1>
-                <p className="loader-subtitle">CRAFTING DIGITAL EXPERIENCES</p>
+                <p className="loader-subtitle">
+                    CRAFTING DIGITAL EXPERIENCES
+                </p>
                 <div className="loader-track">
                     <div
                         className="loader-progress"
