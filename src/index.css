@@ -483,3 +483,51 @@ body {
     transform: none;
   }
 }
+
+
+.journey-track {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(34, 211, 238, 0.65) 12%,
+    rgba(34, 211, 238, 0.25) 85%,
+    transparent
+  );
+}
+
+.journey-node {
+  z-index: 1;
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.journey-item:hover .journey-node {
+  transform: scale(1.08);
+  border-color: rgba(103, 232, 249, 0.9);
+  box-shadow: 0 0 24px rgba(34, 211, 238, 0.25);
+}
+
+.journey-card {
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.journey-item:hover .journey-card {
+  border-color: rgba(34, 211, 238, 0.3);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey-item,
+  .journey-node,
+  .journey-card {
+    transition: none !important;
+  }
+
+  .journey-item {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
